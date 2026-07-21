@@ -1,0 +1,255 @@
+/* Modern CSS Reset & Theme Palette */
+:root {
+    --bg-color: #0f172a;
+    --card-bg: rgba(30, 41, 59, 0.85);
+    --accent-color: #38bdf8;
+    --accent-hover: #0284c7;
+    --mega-red: #d9272e;
+    --mega-red-hover: #b91c22;
+    --text-main: #f8fafc;
+    --text-muted: #cbd5e1;
+    --warning-bg: rgba(245, 158, 11, 0.2);
+    --warning-border: #f59e0b;
+    --border-color: rgba(255, 255, 255, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.88)), 
+                      url('https://static.wikia.nocookie.net/my-td/images/6/6e/TRAILERVID.jpg/revision/latest/scale-to-width-down/1200?cb=20240904175127');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: var(--text-main);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+    padding: 3.5rem 1rem 2.5rem 1rem;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0) 100%);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.2rem;
+}
+
+.site-logo {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.badge {
+    display: inline-block;
+    background-color: var(--warning-bg);
+    color: #fbbf24;
+    border: 1px solid var(--warning-border);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(4px);
+}
+
+h1 {
+    font-size: 2.7rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-main);
+    font-weight: 800;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 .accent {
+    color: var(--accent-color);
+}
+
+p.subtitle {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    max-width: 620px;
+    margin: 0 auto;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Main Layout */
+.main-content {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    flex: 1;
+}
+
+/* Hero Action Buttons */
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    margin: 2.5rem 0 3.5rem 0;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.btn-mega {
+    background-color: var(--mega-red);
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(217, 39, 46, 0.4);
+    gap: 0.6rem;
+}
+
+.btn-mega:hover {
+    background-color: var(--mega-red-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(217, 39, 46, 0.6);
+}
+
+.mega-icon {
+    background: #ffffff;
+    color: var(--mega-red);
+    font-weight: 900;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.btn-secondary {
+    background-color: var(--card-bg);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(8px);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(45, 61, 84, 0.9);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Feature Cards */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 1.75rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.card h3 .sub-tag {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    display: inline-block;
+    margin-left: 0.3rem;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Disclaimer Box */
+.disclaimer {
+    background-color: var(--card-bg);
+    border-left: 4px solid var(--accent-color);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.disclaimer strong {
+    color: var(--text-main);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: rgba(15, 23, 42, 0.8);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 2rem;
+    backdrop-filter: blur(6px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+    p.subtitle {
+        font-size: 1rem;
+    }
+    .hero-actions {
+        flex-direction: column;
+    }
+    .btn {
+        width: 100%;
+    }
+}
